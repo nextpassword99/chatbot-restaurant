@@ -1,0 +1,37 @@
+version: "3.1"
+
+rules:
+  - rule: Responder a saludo
+    steps:
+      - intent: saludar
+      - action: utter_saludar
+
+  - rule: Responder sobre menú
+    steps:
+      - intent: preguntar_menu
+      - action: utter_menu
+
+  - rule: Responder sobre ubicación
+    steps:
+      - intent: preguntar_ubicacion
+      - action: utter_location
+
+  - rule: Responder sobre políticas
+    steps:
+      - intent: preguntar_politicas
+      - action: utter_politicas
+
+  - rule: Responder sobre promociones
+    steps:
+      - intent: preguntar_promociones
+      - action: utter_promociones
+
+  - rule: Responder sobre delivery
+    steps:
+      - intent: preguntar_delivery
+      - action: utter_delivery
+
+  - rule: Responder sobre el restaurante
+    steps:
+      - intent: preguntar_restaurante
+      - action: utter_about
