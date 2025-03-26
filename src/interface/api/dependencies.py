@@ -1,7 +1,7 @@
 from fastapi import Depends
-from src.infrastructure.database.session import DatabaseSession
-from src.domain.repositories.order_repository import SQLOrderRepository
-from src.domain.services.order_service import OrderService
+from ....src.infrastructure.database.session import DatabaseSession
+from ....src.domain.repositories.order_repository import SQLOrderRepository
+from ....src.domain.services.order_service import OrderService
 
 
 def get_db():

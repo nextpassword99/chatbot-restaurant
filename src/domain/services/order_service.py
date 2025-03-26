@@ -1,6 +1,6 @@
 from typing import Optional
-from src.domain.models.order_model import Order
-from src.domain.repositories.order_repository import IOrderRepository
+from ....src.domain.models.order_model import Order
+from ....src.domain.repositories.order_repository import IOrderRepository
 
 
 class OrderService:
