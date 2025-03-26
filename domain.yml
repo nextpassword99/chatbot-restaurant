@@ -1,30 +1,100 @@
 version: "3.0"
+
 intents:
-  - greet
-  - order_food
-  - thank_you
+  - saludar
+  - pedido_realizar
+  - preguntar_menu
+  - preguntar_ubicacion
+  - preguntar_politicas
+  - preguntar_promociones
+  - preguntar_delivery
+  - preguntar_restaurante
+  - ask_contact
+  - ask_about
 
-entities:
-  - items
-  - customer_id
+responses:
+  utter_saludar:
+    - text: "¡Hola! Bienvenido a El Calamar. ¿En qué puedo ayudarte hoy?"
 
-slots:
-  items:
-    type: list
-    mappings:
-      - type: from_entity
-        entity: items
-  customer_id:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: customer_id
+  utter_menu:
+    - text: "En El Calamar ofrecemos lo mejor de la cocina marina y platos típicos de la región. Nuestro menú incluye: 1) Ceviche de pescado, 2) Lomo saltado, 3) Pulpo a la parrilla, 4) Sopa de mariscos, 5) Pescado a la plancha, 6) Pizza Calamar (una pizza especial con calamares frescos), 7) Ensalada de quinua. Además, tenemos opciones vegetarianas y postres caseros como la tarta de maracuyá."
+
+  utter_hours:
+    - text: "Estamos abiertos todos los días de 12:00 PM a 10:00 PM. ¡Te esperamos para disfrutar de nuestra comida!"
+
+  utter_location:
+    - text: "Nos encontramos en la Avenida El Sol, a solo unos minutos de la Plaza de Armas, en Cusco. La dirección exacta es: Avenida El Sol 456."
+
+  utter_politicas:
+    - text: "Nuestra política de reservas es simple: puedes hacer una reserva llamando al +51 84 123456 o a través de nuestro sitio web. Las cancelaciones deben realizarse al menos 24 horas antes para evitar cargos. Si tienes alguna duda, no dudes en contactarnos."
+
+  utter_promociones:
+    - text: "¡Este mes tenemos un 15% de descuento en todos nuestros platos de mariscos! Aprovecha la promoción y disfruta de los mejores sabores del mar."
+
+  utter_delivery:
+    - text: "Sí, realizamos delivery dentro de la ciudad de Cusco. Los pedidos a domicilio tienen un costo adicional de S/ 5. Si deseas hacer un pedido, puedes llamarnos o pedir a través de nuestra página web."
+
+  utter_contact:
+    - text: "Si tienes alguna pregunta o quieres hacer una reserva, puedes contactarnos por teléfono al +51 84 123456 o por correo electrónico a contacto@elcalamar.com."
+
+  utter_about:
+    - text: "El Calamar es un restaurante especializado en cocina marina y platos típicos de Cusco. Fundado hace 10 años por el chef Mario Gómez, quien trae consigo más de 20 años de experiencia en la cocina, nuestro restaurante es un lugar acogedor donde podrás disfrutar de platillos frescos y deliciosos preparados con los mejores ingredientes locales."
+
+  utter_agradecimiento:
+    - text: "Gracias por tu pedido, en breve te atenderemos."
 
 actions:
-  - action_confirm_order
+  - action_ask_menu
+  - action_ask_hours
+  - action_ask_location
+  - action_ask_politicas
+  - action_ask_promociones
+  - action_ask_delivery
+  - action_ask_contact
+  - action_ask_about
 
-templates:
-  utter_greet:
-    - text: "Hello! How can I help you today?"
-  utter_thank_you:
-    - text: "Thank you for your order!"
+entities:
+  - cantidad
+  - item_comida
+  - ingrediente
+
+stories:
+  - story: "Historia de bienvenida"
+    steps:
+      - intent: saludar
+      - action: utter_saludar
+
+  - story: "Historia de menú"
+    steps:
+      - intent: preguntar_menu
+      - action: utter_menu
+
+  - story: "Historia de horarios"
+    steps:
+      - intent: preguntar_politicas
+      - action: utter_hours
+
+  - story: "Historia de ubicación"
+    steps:
+      - intent: preguntar_ubicacion
+      - action: utter_location
+
+  - story: "Historia de políticas"
+    steps:
+      - intent: preguntar_politicas
+      - action: utter_politicas
+
+  - story: "Historia de promociones"
+    steps:
+      - intent: preguntar_promociones
+      - action: utter_promociones
+
+  - story: "Historia de delivery"
+    steps:
+      - intent: preguntar_delivery
+      - action: utter_delivery
+
+  - story: "Historia sobre el restaurante"
+    steps:
+      - intent: preguntar_restaurante
+      - action: utter_about
