@@ -1,6 +1,6 @@
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from ....src.domain.services.order_service import OrderService
+from app.domain.services.order_service import OrderService
 
 
 class OrderAction(Action):

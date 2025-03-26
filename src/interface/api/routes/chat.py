@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
-from .....src.interface.api.schemas import OrderResponseSchema
-from .....src.domain.services.order_service import OrderService
+from app.interface.api.schemas import OrderResponseSchema
+from app.domain.services.order_service import OrderService
 
 router = APIRouter()
 
