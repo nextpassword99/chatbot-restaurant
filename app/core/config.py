@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     DB_URL: str = os.getenv("DB_URL", "sqlite:///orders.db")
     MODEL_PATH: str = os.getenv("MODEL_PATH", "models")
     TRAINING_DATA_DIR: str = os.getenv("TRAINING_DATA_DIR", "data")
+    MODEL_SELECTED = str = os.getenv("MODEL_SELECTED", "model")
 
     class Config:
         env_file = ".env"
