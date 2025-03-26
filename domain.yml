@@ -1,39 +1,30 @@
-version: "3.1"
-
+version: "3.0"
 intents:
-  - saludar
-  - despedir
-  - menu_consultar
-  - horario_consultar
-  - pedido_realizar
-  - pedido_modificar
-  - ubicacion_consultar
+  - greet
+  - order_food
+  - thank_you
 
 entities:
-  - item_comida
-  - cantidad
-  - hora
-  - fecha
-
-responses:
-  utter_bienvenida:
-    - text: "¡Bienvenido a Pizzas Ed! ¿En qué puedo ayudarle hoy?"
-
-  utter_menu:
-    - text: "Nuestro menú incluye:\n- Hamburguesas gourmet\n- Ensaladas frescas\n- Pastas artesanales\n- Postres caseros\n¿Desea ver el menú completo?"
-
-  utter_horario:
-    - text: "Nuestro horario de atención es:\nLunes a Viernes: 12:00 - 23:00\nSábados y Domingos: 11:00 - 00:00"
-
-actions:
-  - action_confirmar_pedido
-  - action_guardar_pedido
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  - items
+  - customer_id
 
 slots:
   items:
     type: list
-    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: items
+  customer_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: customer_id
+
+actions:
+  - action_confirm_order
+
+templates:
+  utter_greet:
+    - text: "Hello! How can I help you today?"
+  utter_thank_you:
+    - text: "Thank you for your order!"
