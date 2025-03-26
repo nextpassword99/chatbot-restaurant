@@ -5,7 +5,11 @@ nlu:
     examples: |
       - Hola
       - Buenas tardes
+      - Buenas noches
       - ¿Cómo están?
+      - ¡Hola! ¿Cómo va todo?
+      - ¡Buen día!
+      - ¡Hey, qué tal!
 
   - intent: pedido_realizar
     examples: |
@@ -13,3 +17,51 @@ nlu:
       - Me gustaría ordenar comida
       - Quiero pedir [2 hamburguesas](cantidad)
       - [Una ensalada César](item_comida) para llevar
+      - Quiero una [pizza margarita](item_comida)
+      - Me gustaría pedir [3 pastas](cantidad)
+      - ¿Me puedes dar una [ensalada caprese](item_comida)?
+      - [Una lasaña](item_comida) para llevar, por favor
+      - ¿Tienen [pasta bolognesa](item_comida)?
+      - Me gustaría pedir una [pizza](item_comida) con [jamón](ingrediente)
+
+  - intent: preguntar_menu
+    examples: |
+      - ¿Qué tienen en el menú?
+      - ¿Qué platos ofrecen?
+      - ¿Cuál es su especialidad?
+      - ¿Me puedes contar sobre la carta?
+      - ¿Tienen platos vegetarianos?
+
+  - intent: preguntar_ubicacion
+    examples: |
+      - ¿Dónde están ubicados?
+      - ¿Dónde se encuentra El Calamar?
+      - ¿Cómo llego a su restaurante?
+      - ¿En qué avenida están?
+
+  - intent: preguntar_politicas
+    examples: |
+      - ¿Cómo puedo hacer una reserva?
+      - ¿Tienen políticas para cancelaciones?
+      - ¿Cuáles son sus horarios?
+      - ¿Qué debo hacer si quiero cambiar mi reserva?
+
+  - intent: preguntar_promociones
+    examples: |
+      - ¿Tienen alguna promoción este mes?
+      - ¿Qué descuentos tienen ahora?
+      - ¿Hay promociones en pizza?
+      - ¿Tienen descuentos para grupos grandes?
+
+  - intent: preguntar_delivery
+    examples: |
+      - ¿Hacen delivery?
+      - ¿Puedo pedir comida a domicilio?
+      - ¿Cuáles son las opciones de delivery?
+      - ¿Cuánto cuesta el delivery?
+
+  - intent: preguntar_restaurante
+    examples: |
+      - ¿Qué tipo de comida sirven en El Calamar?
+      - ¿Cómo nació el restaurante El Calamar?
+      - ¿Quién es el chef del restaurante?
