@@ -1,0 +1,34 @@
+version: "3.1"
+
+intents:
+  - saludar
+  - despedir
+  - menu_consultar
+  - horario_consultar
+  - pedido_realizar
+  - pedido_modificar
+  - ubicacion_consultar
+
+entities:
+  - item_comida
+  - cantidad
+  - hora
+  - fecha
+
+responses:
+  utter_bienvenida:
+    - text: "¡Bienvenido a Pizzas Ed! ¿En qué puedo ayudarle hoy?"
+
+  utter_menu:
+    - text: "Nuestro menú incluye:\n- Hamburguesas gourmet\n- Ensaladas frescas\n- Pastas artesanales\n- Postres caseros\n¿Desea ver el menú completo?"
+
+  utter_horario:
+    - text: "Nuestro horario de atención es:\nLunes a Viernes: 12:00 - 23:00\nSábados y Domingos: 11:00 - 00:00"
+
+actions:
+  - action_confirmar_pedido
+  - action_guardar_pedido
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
