@@ -6,10 +6,9 @@ class OrderCreateSchema(BaseModel):
     customer_id: str
 
 
-class OrderResponseSchema(BaseModel):
-    id: int
-    status: str
-    items: list
+class ChatRequestSchema(BaseModel):
+    message: str
 
-    class Config:
-        orm_mode = True
+
+class ChatResponseSchema(BaseModel):
+    response: str
