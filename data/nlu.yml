@@ -1,0 +1,15 @@
+version: "3.1"
+
+nlu:
+  - intent: saludar
+    examples: |
+      - Hola
+      - Buenas tardes
+      - ¿Cómo están?
+
+  - intent: pedido_realizar
+    examples: |
+      - Quiero hacer un pedido
+      - Me gustaría ordenar comida
+      - Quiero pedir [2 hamburguesas](cantidad)
+      - [Una ensalada César](item_comida) para llevar
