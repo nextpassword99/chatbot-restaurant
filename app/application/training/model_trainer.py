@@ -1,5 +1,4 @@
 from rasa import train
-from rasa.model import get_model
 from typing import Optional
 
 
