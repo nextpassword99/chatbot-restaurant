@@ -11,6 +11,16 @@ intents:
   - preguntar_restaurante
   - ask_contact
   - ask_about
+  - preguntar_precio
+  - confirmar_pedido
+  - agregar_al_pedido
+
+slots:
+  pedido_actual:
+    type: list
+    influence_conversation: true
+    mappings:
+      - type: custom
 
 responses:
   utter_saludar:
@@ -43,6 +53,15 @@ responses:
   utter_agradecimiento:
     - text: "Gracias por tu pedido, en breve te atenderemos."
 
+  utter_precio:
+    - text: "El precio de {item_comida} es {precio}"
+
+  utter_confirmacion_pedido:
+    - text: "¡Perfecto! Has agregado {cantidad} {item_comida} a tu pedido. ¿Deseas agregar algo más?"
+
+  utter_pedido_finalizado:
+    - text: "Pedido confirmado:\n{pedido}\nTotal a pagar: {total} Soles\n¡Gracias por tu compra!"
+
 actions:
   - action_ask_menu
   - action_ask_hours
@@ -52,11 +71,16 @@ actions:
   - action_ask_delivery
   - action_ask_contact
   - action_ask_about
+  - action_proveer_precio
+  - action_confirmar_pedido
+  - action_finalizar_pedido
+  - action_manejar_errores
 
 entities:
   - cantidad
   - item_comida
   - ingrediente
+  - precio
 
 stories:
   - story: "Historia de bienvenida"
@@ -98,3 +122,13 @@ stories:
     steps:
       - intent: preguntar_restaurante
       - action: utter_about
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+forms:
+  pedido_form:
+    required_slots:
+      - item_comida
+      - cantidad
