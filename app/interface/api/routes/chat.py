@@ -4,7 +4,7 @@ from rasa.core.agent import Agent
 from app.core.config import settings
 
 router = APIRouter()
-agent = Agent.load(f"models/{settings.MODEL_SELECTED}")
+agent = Agent.load(settings.MODEL_SELECTED)
 
 
 @router.post("/chat", response_model=ChatResponseSchema)
