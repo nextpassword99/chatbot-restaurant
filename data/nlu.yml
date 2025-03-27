@@ -65,3 +65,42 @@ nlu:
       - ¿Qué tipo de comida sirven en El Calamar?
       - ¿Cómo nació el restaurante El Calamar?
       - ¿Quién es el chef del restaurante?
+
+  - intent: preguntar_precio
+    examples: |
+      - ¿Cuánto cuesta el [ceviche](item_comida)?
+      - Precio de la [pizza calamar](item_comida)
+      - Quiero saber el costo del [lomo saltado](item_comida)
+      - ¿A cómo está la [tarta de maracuya](item_comida)?
+      - Valor de la [ensalda capresa](item_comida)
+      - kiero saber el presio del [pulpo](item_comida)
+      - cuanto vale la [piza](item_comida)
+      - dame el precio de [lasagña](item_comida)
+
+  - lookup: item_comida
+    examples: |
+      - ceviche
+      - cebiche
+      - lomo saltado
+      - pulpo
+      - pizza calamar
+      - piza
+      - tarta de maracuya
+      - tarta maracuya
+      - lasaña
+      - lasagña
+      - ensalada capresa
+      - ensalda capresa
+
+  - synonym: ceviche
+    examples: |
+      - cebiche
+      - seviche
+      - cebice
+
+  - synonym: pizza calamar
+    examples: |
+      - piza calamar
+      - pizza de calamar
+      - piza calamar
+      - pizzas calamar
