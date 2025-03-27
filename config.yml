@@ -1,3 +1,4 @@
+recipe: default.v1
 language: es
 
 pipeline:
@@ -5,24 +6,22 @@ pipeline:
 - name: RegexFeaturizer
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
-  analyzer: "char_wb"
+  analyzer: char_wb
   min_ngram: 1
   max_ngram: 4
 - name: DIETClassifier
   epochs: 300
   constrain_similarities: true
-  use_masked_language_model: true
 - name: EntitySynonymMapper
-- name: ResponseSelector
-  epochs: 150
 
 policies:
 - name: MemoizationPolicy
+  max_history: 5
 - name: TEDPolicy
   max_history: 5
   epochs: 200
   constrain_similarities: true
 - name: RulePolicy
   core_fallback_threshold: 0.4
-  core_fallback_action_name: "action_default_fallback"
-assistant_id: 20250326-163423-coal-status
+  core_fallback_action_name: action_default_fallback
+assistant_id: 20250327-163835-mild-number

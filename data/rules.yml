@@ -1,47 +1,62 @@
 version: "3.1"
 
 rules:
-  - rule: Responder a saludo
+  - rule: Saludo inicial
     steps:
       - intent: saludar
       - action: utter_saludar
 
-  - rule: Responder sobre menú
+  - rule: Mostrar menú
     steps:
       - intent: preguntar_menu
       - action: utter_menu
 
-  - rule: Responder sobre ubicación
+  - rule: Proporcionar ubicación
     steps:
       - intent: preguntar_ubicacion
       - action: utter_location
 
-  - rule: Responder sobre políticas
+  - rule: Informar políticas
     steps:
       - intent: preguntar_politicas
       - action: utter_politicas
 
-  - rule: Responder sobre promociones
+  - rule: Mostrar promociones
     steps:
       - intent: preguntar_promociones
       - action: utter_promociones
 
-  - rule: Responder sobre delivery
+  - rule: Informar sobre delivery
     steps:
       - intent: preguntar_delivery
       - action: utter_delivery
 
-  - rule: Responder sobre el restaurante
+  - rule: Hablar sobre el restaurante
     steps:
       - intent: preguntar_restaurante
       - action: utter_about
 
-  - rule: Proporcionar precio
+  - rule: Proporcionar precios
     steps:
       - intent: preguntar_precio
       - action: action_proveer_precio
 
-  - rule: Manejar errores
+  - rule: Manejar fallback
     steps:
       - intent: nlu_fallback
-      - action: action_manejar_errores
+      - action: action_default_fallback
+
+  - rule: Contacto
+    steps:
+      - intent: ask_contact
+      - action: utter_contact
+
+  - rule: Confirmación de pedido
+    steps:
+      - intent: confirmar_pedido
+      - action: utter_confirmacion_pedido
+
+  - rule: Finalizar pedido
+    steps:
+      - intent: agregar_al_pedido
+      - action: action_finalizar_pedido
