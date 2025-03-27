@@ -3,10 +3,10 @@ from app.interface.api.schemas import ChatResponseSchema, ChatRequestSchema
 from app.domain.services.order_service import OrderService
 from app.interface.api.dependencies import get_order_service
 from rasa.core.agent import Agent
-from app.core.config import Settings
+from app.core.config import settings
 
 router = APIRouter()
-agent = Agent.load(f"models/{Settings.MODEL_SELECTED}")
+agent = Agent.load(f"models/{settings.MODEL_SELECTED}")
 
 
 @router.post("/chat", response_model=ChatResponseSchema)
