@@ -35,3 +35,13 @@ rules:
     steps:
       - intent: preguntar_restaurante
       - action: utter_about
+
+  - rule: Proporcionar precio
+    steps:
+      - intent: preguntar_precio
+      - action: action_proveer_precio
+
+  - rule: Manejar errores
+    steps:
+      - intent: nlu_fallback
+      - action: action_manejar_errores
