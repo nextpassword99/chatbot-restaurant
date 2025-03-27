@@ -1,8 +1,18 @@
 from chatterbot import ChatBot
 from app.core.config import settings
+from app.application.models.rasa import Rasa
+from app.application.models.chatterbot import ChatterBot
 
 
 class Execute:
+    @staticmethod
+    def get_model(model) -> Rasa | ChatterBot | None:
+        if model == "rasa":
+            return Rasa()
+
+        if model == "chatterbot":
+            return ChatterBot()
+
     @staticmethod
     async def start_chatter_bot():
         return ChatBot('MiBot',
