@@ -1,6 +1,6 @@
 .env
 venv/
-models/
+/models/
 .rasa/
 orders.db
 launch.json
