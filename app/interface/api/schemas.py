@@ -8,6 +8,7 @@ class OrderCreateSchema(BaseModel):
 
 class ChatRequestSchema(BaseModel):
     message: str
+    model: str
 
 
 class ChatResponseSchema(BaseModel):
