@@ -1,7 +1,5 @@
 from fastapi import APIRouter, Depends
 from app.interface.api.schemas import ChatResponseSchema, ChatRequestSchema
-from app.domain.services.order_service import OrderService
-from app.interface.api.dependencies import get_order_service
 from rasa.core.agent import Agent
 from app.core.config import settings
 
