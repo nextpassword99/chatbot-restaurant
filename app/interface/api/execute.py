@@ -1,14 +1,14 @@
 from chatterbot import ChatBot
 from app.core.config import settings
-from app.application.models.rasa import Rasa
+from app.application.models.rasa import RasaModel
 from app.application.models.chatterbot import ChatterBot
 
 
 class Execute:
     @staticmethod
-    def get_model(model) -> Rasa | ChatterBot | None:
+    def get_model(model) -> RasaModel | ChatterBot | None:
         if model == "rasa":
-            return Rasa()
+            return RasaModel()
 
         if model == "chatterbot":
             return ChatterBot()
