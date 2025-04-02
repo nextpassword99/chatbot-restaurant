@@ -16,6 +16,9 @@ class GemmaModel:
         json_content = {
             "model": self.model,
             "prompt": Content.get_prompt(Content.info(), self.chat, msg),
+            "options": {
+                "temperature": 0.9,
+            },
             "stream": False
         }
 
