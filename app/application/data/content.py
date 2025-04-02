@@ -1,43 +1,46 @@
-info = """"
-El Calamar - Especialistas en cocina marina y platos típicos desde 2013.
+class Content:
+    @staticmethod
+    def info():
+        return """"
+        El Calamar - Especialistas en cocina marina y platos típicos desde 2013.
 
-Menú:
+        Menú:
 
-    Ceviche de pescado (S/35)
+            Ceviche de pescado (S/35)
 
-    Lomo saltado (S/40)
+            Lomo saltado (S/40)
 
-    Pulpo a la parrilla (S/45)
+            Pulpo a la parrilla (S/45)
 
-    Pizza Calamar (S/50)
+            Pizza Calamar (S/50)
 
-    Tarta de maracuyá (S/20)
+            Tarta de maracuyá (S/20)
 
-Horario de atención: Lunes a Domingo de 12:00 PM a 10:00 PM.
+        Horario de atención: Lunes a Domingo de 12:00 PM a 10:00 PM.
 
-Ubicación: Av. El Sol 456, Cusco - frente a la Plaza de Armas.
+        Ubicación: Av. El Sol 456, Cusco - frente a la Plaza de Armas.
 
-Políticas:
+        Políticas:
 
-    Aceptamos reservas con 24h de anticipación.
+            Aceptamos reservas con 24h de anticipación.
 
-    Cancelaciones gratis hasta 2h antes.
+            Cancelaciones gratis hasta 2h antes.
 
-Promociones:
+        Promociones:
 
-    ¡15% de descuento en pedidos mayores a S/100 usando el código CALAMAR15!
+            ¡15% de descuento en pedidos mayores a S/100 usando el código CALAMAR15!
 
-Delivery:
+        Delivery:
 
-    Delivery disponible en Cusco con costo de S/5.
+            Delivery disponible en Cusco con costo de S/5.
 
-    Tiempo estimado 30-45 min.
+            Tiempo estimado 30-45 min.
 
-Contacto:
+        Contacto:
 
-    📞 Llámanos al +51 84 123456
+            📞 Llámanos al +51 84 123456
 
-    📧 contacto@elcalamar.com
+            📧 contacto@elcalamar.com
         """
 
     @staticmethod
