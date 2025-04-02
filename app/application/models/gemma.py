@@ -13,10 +13,16 @@ class GemmaModel:
         return self
 
     def _get_prompt(self, msg):
+        return f"""Información: {info} 
+                    Usando la información proporcionada, debes responder 
+                    solo usando esos datos. 
                     Historial de conversación: {self.chat}
+                    Debes responder a la siguiente pregunta: {msg}. 
                     Debes tener un tono de cordialidad como si estuvieras 
                     atendiendo a una persona. Debe ser una respuesta breve. 
-                    Hazlo directo sin añadir otros detalles"""
+                    Hazlo directo sin añadir otros detalles. Usa íconos.
+                    Actúa como si estuvieras atendiendo a una persona.
+                    """
 
     async def handle_text(self, msg):
         json_content = {
