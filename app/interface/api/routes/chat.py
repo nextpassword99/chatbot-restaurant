@@ -11,11 +11,13 @@ async def handle_chat_message(
     chat_message: ChatRequestSchema,
 ):
     global agent_instance
+    try:
+        if agent_instance is None:
+            agent_instance = Execute.get_model(chat_message.model)
 
-    if agent_instance is None:
-        agent_instance = Execute.get_model(chat_message.model)
+        chatbot_response = await agent_instance.handle_text(chat_message.message)
+        res = agent_instance.justResponse(chatbot_response)
 
-    chatbot_response = await agent_instance.handle_text(chat_message.message)
-    res = agent_instance.justResponse(chatbot_response)
-
-    return ChatResponseSchema(response=res)
+        return ChatResponseSchema(response=res)
+    except:
+        return ChatResponseSchema(response="Error")
