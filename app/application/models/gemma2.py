@@ -13,5 +13,6 @@ class Gemma2:
 
         return result.stdout.decode("utf-8")
 
-    async def justResponse(self, response):
+    @classmethod
+    def justResponse(self, response):
         return response
