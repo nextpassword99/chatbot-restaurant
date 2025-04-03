@@ -1,4 +1,5 @@
 import requests
+import re
 
 from app.core.config import settings
 from app.application.data.content import Content
@@ -31,7 +32,8 @@ class DeepSeekModel:
 
     @classmethod
     def justResponse(self, response):
-        return response["response"]
+        response = re.sub(r'<think>.*?</think>', '', response["response"])
+        return response
 
     def save_chat(self, msg, response_text):
         content_to_add = f"""cliente: {msg}
