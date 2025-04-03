@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter
 from app.interface.api.schemas import ChatResponseSchema, ChatRequestSchema
 from app.interface.api.execute import Execute
 
