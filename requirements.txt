@@ -116,7 +116,7 @@ pymongo==4.3.3
 pyparsing==3.2.3
 pyrsistent==0.20.0
 python-crfsuite==0.9.11
-python-dateutil==2.9.0.post0
+python-dateutil>=2.8.0,<2.9.0
 python-dotenv==1.1.0
 python-engineio==4.11.2
 python-socketio==5.12.1
